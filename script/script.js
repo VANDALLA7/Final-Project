@@ -83,3 +83,36 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.header__nav');
+    
+    burger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        
+        // Анимация бургера в крестик
+        const spans = burger.querySelectorAll('span');
+        if (nav.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+    
+    // Закрыть меню при клике на ссылку
+    document.querySelectorAll('.header__nav-item a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.querySelectorAll('span').forEach(span => {
+                span.style.transform = 'none';
+                span.style.opacity = '1';
+            });
+        });
+    });
+});
