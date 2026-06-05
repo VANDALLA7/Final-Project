@@ -706,6 +706,9 @@ main{
         border-radius: 0;
         padding-bottom: 50px;
         overflow: hidden;
+        padding-top: 100px;
+        border-radius: 0;
+        overflow: hidden;
     }
     .footer{
         border-radius: 0;
@@ -719,7 +722,20 @@ main{
     .header {
         flex-direction: column;
         gap: 20px;
-        padding: 20px 0;
+        padding: 30px 0;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 15px 20px;
+        background: linear-gradient(149deg, #377651 0%, #112120 100%);
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        gap: 0;
+        border-radius: 0;
     }
     
     .header__nav {
@@ -756,16 +772,11 @@ main{
         display: none;
     }
     
-    /* Логотип */
     .menu__logo {
         margin-left: 0;
         position: relative;
         font-size: 24px;
-    }
-    
-    .header {
-        padding: 30px 0;
-        justify-content: space-between;
+        z-index: 1001;
     }
     
     .main_girl {
@@ -792,23 +803,65 @@ main{
         max-width: 400px;
         margin: 0 auto;
     }
+    .main__ways {
+        padding: 40px 50px;
+    }
     
-    .ways_content {
+    .ways__content {
         flex-direction: column;
+        justify-content: flex-start;
         gap: 30px;
     }
     
-    .ways_info {
+    .ways__info {
+        width: 100%;
         max-width: 100%;
-        text-align: center;
     }
     
-    .ways_btn {
-        margin: 0 auto;
+    .ways__title {
+        font-size: 30px;
+        margin-bottom: 5px;
     }
     
-    .slider_pics {
-        justify-content: center;
+    .ways__title span {
+        font-size: 35px;
+    }
+    
+    .ways__text {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+    
+    .ways__btn {
+        padding: 25px 40px;
+        font-size: 25px;
+    }
+    
+    .ways__slider {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slider__pics {
+        gap: 5px;
+    }
+    
+    .slide {
+        min-width: 220px;
+        height: 350px;
+    }
+    
+    .slider__btn {
+        width: 65px;
+        height: 65px;
+        left: 10px;
+        top: 50%;
+    }
+    
+    .slider__btn svg {
+        width: 20px;
+        height: 20px;
     }
     
     .review_wrapper {
@@ -822,7 +875,9 @@ main{
         max-width: 300px;
         height: auto;
     }
-    
+    .subscribe__title{
+        font-size: 40px;
+    }
     .subscribe__form {
         max-width: 70%;
     }
@@ -835,22 +890,47 @@ main{
         flex-wrap: nowrap;
     }
     
+    .footer {
+        border-radius: 0;
+        padding: 40px 20px;
+    }
+
     .footer__container {
         flex-direction: row;
         text-align: center;
+        justify-content: space-between;
+        gap: 20px;
     }
 
     .footer__nav {
-        /* flex-wrap: wrap; */
-        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 25px;
+        justify-content: flex-end;
     }
-    /* --- Бургер-меню --- */
+
+    .footer__logo {
+        position: relative; /* убираем absolute */
+        margin-left: 0;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    .footer__nav-item:first-child {
+        margin-left: 0;
+    }
+    
+    .footer__nav-item a {
+        white-space: nowrap;
+    }
+
     .burger {
         display: flex;
         position: absolute;
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+        
     }
     .nav-line{
         width: 0;
@@ -858,6 +938,98 @@ main{
     }
     
 }
+
+@media(max-width:576px){
+    .subscribe__title{
+        font-size: 40px;
+    }
+    .subscribe__form input{
+        padding: 20px 20px;
+    }
+    .subscribe__form button{
+        font-size: 20px;
+        padding: 20px 20px;
+    }
+    .main__top{
+        padding: 40px;
+    }
+    .top__title{
+        font-size: 30px;
+    }
+   .top__wrapper{
+    padding: 100px 10px;
+   }
+}
+
+@media(max-width:320px){
+    .main__girl{
+        margin: 0 15px;
+    }
+    .girl__tag{
+        font-size: 20px;
+    }
+    .girl__title{
+        font-size: 36px;
+        padding-top: 10px;
+    }
+    .girl__text{
+        font-size: 20px;
+        margin-top: 15px;
+    }
+    .girl__btn{
+        margin-top: 40px;
+    }
+
+    .green__wrapper{
+        padding-bottom: 10px;
+    }
+    .ways__btn{
+        font-size: 20px;
+        padding: 20px;
+    }
+    .ways__slider{
+        display: none;
+    }
+    
+    .main__review{
+        padding: 30px 15px;
+    }
+    .review__author{
+        gap: 10px;
+    }
+    .author__avatar{
+        width: 70px;
+        height: 70px;
+    }
+
+    .top__title{
+        font-size: 28px;
+        
+    }
+    .top__text{
+        font-size: 18px;
+    }
+
+    .subscribe__title{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .subscribe__form input{
+        padding: 20px 20px;
+    }
+    .subscribe__form button{
+        font-size: 17px;
+    }
+
+    .footer__nav{
+        display: none;
+    }
+    .footer__logo {
+        margin: 0 auto;
+        font-size: 22px;
+    }
+}
+
 
 
 
